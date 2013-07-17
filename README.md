@@ -44,6 +44,7 @@ Now, instead of doing [http://yourapp.herokuapp.com/twitter-user/]() you should 
 
 | Version | Notes                                                                               |
 | -------:| ----------------------------------------------------------------------------------- |
+|   1.0.1 | Parse tweet and create links from @usernames and urls                               |
 |   1.0.0 | Initial release                                                                     |
 
 ### Copyright

@@ -1,6 +1,6 @@
 {
   "name": "node-twitter-rss",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "author" : "Manuel van Rijn (http://manuel.manuelles.nl)",
   "description" : "Simple user timeline rss feed proxy with oAuth for Twitter's API v1.1",
