@@ -59,7 +59,7 @@ app.get('/:screen_name/:secret?', function(req, res) {
         feed.item({
           title:          tweet.text,
           link:           'https://twitter.com/' + tweet.user.screen_name + '/status/' + tweet.id_str,
-          description:    tweet.text,
+          description:    parseTweetText(tweet.text),
           date:           new Date(tweet.created_at)
         });
       }
@@ -73,3 +73,14 @@ var port = process.env.PORT || 5000;
 app.listen(port, function() {
   console.log('Listening on: ' + port);
 });
+
+var parseTweetText = function(text) {
+  text = text.replace(/[@]+[A-Za-z0-9-_]+/g, function(u) {
+    var username = u.replace("@","")
+    return u.link("https://twitter.com/"+username);
+  });
+  text = text.replace(/[A-Za-z]+:\/\/[A-Za-z0-9-_]+\.[A-Za-z0-9-_:%&~\?\/.=]+/g, function(url) {
+    return url.link(url);
+  });
+  return text;
+};
