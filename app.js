@@ -56,7 +56,7 @@ app.get('/:screen_name/:secret?', function(req, res) {
           });
         }
 
-        feed.item({
+        feed.addItem({
           title:          tweet.text,
           link:           'https://twitter.com/' + tweet.user.screen_name + '/status/' + tweet.id_str,
           description:    parseTweetText(tweet.text),
